@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="XAUUSDの損益と損切り時の想定損失を日本円で計算。外部API不要のゴールド専用計算ツール。">
+<title>GOLD / XAUUSD 損益計算</title>
+<link rel="stylesheet" href="style.css"><script src="calculator.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="./"><span class="brand-icon" aria-hidden="true">Au</span> GOLD<span class="brand-sub">CALCULATOR</span></a><span class="offline"><i></i> API不要・ブラウザ内で計算</span></header>
+<main>
+<div class="intro"><div class="eyebrow">PRECIOUS METALS / XAUUSD</div><h1>ゴールドの損益を、<br class="mobile-break">シンプルに。</h1><p>取引条件を入力して、損益とリスクを日本円で確認。</p></div>
+<div class="workspace">
+<section class="input-card" aria-labelledby="conditions"><div class="section-heading"><h2 id="conditions">取引条件</h2><span>01 / INPUT</span></div>
+<form id="calculator" novalidate>
+<fieldset class="direction"><legend>売買方向</legend><div class="switch"><label><input type="radio" name="side" value="BUY" checked><span>↗ BUY <small>買い</small></span></label><label><input type="radio" name="side" value="SELL"><span>↘ SELL <small>売り</small></span></label></div></fieldset>
+<div class="fields">
+<label class="field">エントリー価格<div class="input-wrap"><input id="entry" name="entry" type="number" inputmode="decimal" min="0" step="any" value="4000" aria-describedby="entry-error"><span>USD</span></div><small class="error" id="entry-error"></small></label>
+<label class="field">決済価格<div class="input-wrap"><input id="exit" name="exit" type="number" inputmode="decimal" min="0" step="any" value="4015" aria-describedby="exit-error"><span>USD</span></div><small class="error" id="exit-error"></small></label>
+<label class="field">ロット数<div class="input-wrap"><input id="lots" name="lots" type="number" inputmode="decimal" min="0" step="any" value="0.1" aria-describedby="lots-error"><span>LOT</span></div><small class="error" id="lots-error"></small></label>
+<label class="field">ドル円レート<div class="input-wrap"><input id="rate" name="rate" type="number" inputmode="decimal" min="0" step="any" value="150" aria-describedby="rate-error"><span>JPY / USD</span></div><small class="error" id="rate-error"></small></label>
+</div>
+<div class="stop-section"><label class="field">損切り価格 <span class="optional">任意</span><div class="input-wrap"><input id="stop" name="stop" type="number" inputmode="decimal" min="0" step="any" value="3990" aria-describedby="stop-error stop-hint"><span>USD</span></div><small class="error" id="stop-error"></small></label><p id="stop-hint" class="hint">BUYはエントリー以下、SELLはエントリー以上。</p></div>
+<details><summary>契約数量の設定 <span id="contract-summary">1 LOT = 100 oz</span></summary><label class="field contract-field">1ロットあたりのトロイオンス<div class="input-wrap"><input id="ounces" name="ounces" type="number" inputmode="decimal" min="0" step="any" value="100" aria-describedby="ounces-error"><span>oz / LOT</span></div><small class="error" id="ounces-error"></small></label><p class="hint">ご利用のブローカーの契約仕様に合わせて変更してください。</p></details>
+<div class="actions"><button type="submit" class="primary">損益を計算 <span aria-hidden="true">→</span></button><button type="reset" class="reset">初期値に戻す</button></div><p class="hint">入力を変更すると自動で再計算します。</p><p id="general-error" class="error" role="alert"></p>
+</form></section>
+<section class="result-column" aria-labelledby="result-heading"><div class="result-card" aria-live="polite" aria-atomic="true"><div class="section-heading"><h2 id="result-heading">計算結果</h2><span>02 / RESULT</span></div><div class="result-top"><span>日本円での損益</span><span id="result-status" class="badge">利益</span></div><div id="yen" class="yen positive">+22,500<span> 円</span></div><p id="usd" class="usd">+$150.00 USD</p><div class="result-details"><div><span>取引数量</span><strong id="quantity">10 oz</strong></div><div><span>売買方向を反映した価格差</span><strong id="delta">+15.00 USD</strong></div><div><span>適用レート</span><strong id="applied-rate">150 JPY / USD</strong></div></div><div class="risk"><div class="risk-label"><span class="risk-icon" aria-hidden="true">↘</span><div><h3>損切り時の想定損失</h3><p>指定した損切り価格で決済した場合</p></div></div><strong id="loss">15,000<span> 円</span></strong><p id="loss-usd">$100.00 USD</p></div></div>
+<div class="formula-card"><span class="eyebrow">HOW IT WORKS</span><h3>計算のしくみ</h3><p><b id="formula-direction">決済価格 − エントリー価格</b><br>× ロット数 × 1ロットの数量 × ドル円レート</p><p class="hint">SELLでは「エントリー価格 − 決済価格」で計算します。日本円は小数点以下を四捨五入して表示します。</p></div></section>
+</div><footer><span>GOLD / XAUUSD</span><p>手数料・スワップ・スリッページ等は含みません。為替レートは手動入力です。</p></footer>
+</main></body></html>

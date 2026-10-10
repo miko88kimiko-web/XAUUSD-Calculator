@@ -1,0 +1,12 @@
+{
+  "name": "xauusd-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "node tests/calculator.test.js",
+    "check": "node --check calculator.js && node --check app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
