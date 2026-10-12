@@ -32,7 +32,7 @@
 
 Android端末そのものへのインストール、OSのホーム画面アイコン、実際のstandaloneウィンドウ表示は未実施です。manifestのdisplayはstandaloneで、Chromiumのインストール要件は通っています。Android Chromeでの最終確認はREADMEのインストール手順を参照してください。
 
-既存リポジトリは非公開です。利用可能なGitHub接続ではPages設定の取得・変更操作が提供されていないため、Pagesの有効化と公開URLの到達確認は実施していません。GitHub Pagesの公開URLは未発行・未確認として扱います。既存リポジトリの公開範囲は変更していません。
+2026-10-12 23:35 JST追記: ユーザーの確認のもとリポジトリをPublicへ変更し、ユーザーがGitHub Pagesをmain / (root)で有効化しました。公開URL https://miko88kimiko-web.github.io/XAUUSD-Calculator/ へアクセスし、初期値の+22,500円、決済価格4020への変更による+30,000円、リセット後の+22,500円、および「オフラインでも計算できます。」の表示を確認しました。公開環境でのAndroid実機インストール・通信遮断試験は未実施です。
 
 ## 再検証
 
