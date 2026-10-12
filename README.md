@@ -39,3 +39,42 @@ git push origin HEAD
 ```
 
 GitHub Pagesを利用する場合は Settings → Pages → Deploy from a branch で対象ブランチの `/ (root)` を選択できます。
+
+## Android PWA（v1.1.0）
+
+元の計算ロジック（`calculator.js`）と画面制御（`app.js`）は変更していません。既存の色・カード・入力欄を維持し、専用アイコン、インストールボタン、オフライン準備状況を追加しました。外部API・実行時ライブラリはありません。
+
+### Androidへのインストール
+
+1. 公開後のHTTPS URLをAndroidのChromeで開きます。ChatGPT内のブラウザではなくChromeで開いてください。
+2. 画面下に「オフラインでも計算できます。」と表示されるまで待ちます。初回は通信が必要です。
+3. 「ホーム画面に追加」ボタン、またはChrome右上の「︙」→「ホーム画面に追加」→「インストール」を選びます。メニュー名はChromeのバージョンにより「アプリをインストール」などの場合があります。
+4. ホーム画面の「GOLD CALC」アイコンで起動します。スタンドアロン表示で計算できます。
+5. 機内モードにして閉じてから再起動し、入力変更で計算結果が変わることを確認してください。
+
+ZIPの中のHTMLを直接開くだけではPWAとしてインストールできません。HTTPSでの配信が必要です（開発PCのlocalhostは例外）。
+
+### オフラインと更新
+
+- Service WorkerはHTML・CSS・JS・manifest・アイコンの8ファイルを一括保存します。初回保存後はオフラインで起動・計算できます。
+- 初回の入力値保存はありません。再起動・再読み込みで初期値に戻ります。元の仕様を維持しています。
+- キャッシュがOSやブラウザによって削除された場合は、再度オンラインで開いて準備してください。
+- 更新時は`sw.js`の`VERSION`も変更します。新旧ファイルの混在を避けるため、アプリと関連するChromeのタブをすべて閉じた後、次の起動で新しいバージョンへ切り替わります。更新取得には通信が必要です。
+- キャッシュ名には配信scopeを含め、別のアプリのキャッシュを削除しません。アプリの既知ファイル以外の通信は横取りしません。
+- 為替レート・契約数量は引き続き手動設定です。通信やAIへの接続は不要です。
+
+### GitHub Pages
+
+既存リポジトリ: https://github.com/miko88kimiko-web/XAUUSD-Calculator
+
+GitHubのリポジトリ Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: main / (root) → Save。
+
+GitHub Freeでは公開リポジトリのPagesが利用できます。非公開リポジトリのPagesはGitHub Pro等の対応プランが必要です。既存リポジトリの公開範囲はこの変更では変えていません。Pagesを設定できない場合は、公開範囲か利用プランをユーザーが選択する必要があります。
+
+ルート・プロジェクトのサブパスのどちらにも対応するよう、manifest・アイコン・Service Workerは相対URLにしています。公開後、Pages設定に表示されるURLへアクセスして動作を確認してください。
+
+### 構成と検証
+
+追加: `manifest.json`, `pwa.js`, `sw.js`, `icons/icon-192.png`, `icons/icon-512.png`, `.nojekyll`, `tests/pwa.test.js`。
+
+`npm run check`で全JSの構文、`npm test`で計算とPWAの23テストを確認できます。Service WorkerのユニットテストはCache APIのモックを使います。実ブラウザの確認結果と実機確認の範囲は`TEST_RESULTS.md`を参照してください。

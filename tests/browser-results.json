@@ -1,0 +1,216 @@
+{
+  "browser": "153.0.8010.0",
+  "results": [
+    "初期BUY: +22,500円 / 損切り15,000円",
+    "BUY損失 / SELL利益 / 売買方向に合わない損切りエラー",
+    "任意損切り / 無効入力・エラー欄フォーカス / リセット / 契約数量変更",
+    "320/360/390/412px・横向き・デスクトップ: 横はみ出しなし、入力・ボタン44px以上",
+    "Chromium: manifest解析エラー0 / installabilityErrors 0",
+    "manifestのstandalone指定確認（Androidの実機インストールは未実施）",
+    "実ブラウザの通信遮断: 再読み込み / タブを閉じて再起動 / オフライン入力計算"
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "height": 740,
+      "overflow": false,
+      "inputs": [
+        {
+          "id": "entry",
+          "height": 52.5
+        },
+        {
+          "id": "exit",
+          "height": 52.5
+        },
+        {
+          "id": "lots",
+          "height": 52.5
+        },
+        {
+          "id": "rate",
+          "height": 52.5
+        },
+        {
+          "id": "stop",
+          "height": 52.5
+        },
+        {
+          "id": "ounces",
+          "height": 52.5
+        }
+      ],
+      "primary": 48.390625,
+      "reset": 44
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "overflow": false,
+      "inputs": [
+        {
+          "id": "entry",
+          "height": 52.5
+        },
+        {
+          "id": "exit",
+          "height": 52.5
+        },
+        {
+          "id": "lots",
+          "height": 52.5
+        },
+        {
+          "id": "rate",
+          "height": 52.5
+        },
+        {
+          "id": "stop",
+          "height": 52.5
+        },
+        {
+          "id": "ounces",
+          "height": 52.5
+        }
+      ],
+      "primary": 48.390625,
+      "reset": 44
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "overflow": false,
+      "inputs": [
+        {
+          "id": "entry",
+          "height": 52.5
+        },
+        {
+          "id": "exit",
+          "height": 52.5
+        },
+        {
+          "id": "lots",
+          "height": 52.5
+        },
+        {
+          "id": "rate",
+          "height": 52.5
+        },
+        {
+          "id": "stop",
+          "height": 52.5
+        },
+        {
+          "id": "ounces",
+          "height": 52.5
+        }
+      ],
+      "primary": 48.390625,
+      "reset": 44
+    },
+    {
+      "width": 412,
+      "height": 915,
+      "overflow": false,
+      "inputs": [
+        {
+          "id": "entry",
+          "height": 52.5
+        },
+        {
+          "id": "exit",
+          "height": 52.5
+        },
+        {
+          "id": "lots",
+          "height": 52.5
+        },
+        {
+          "id": "rate",
+          "height": 52.5
+        },
+        {
+          "id": "stop",
+          "height": 52.5
+        },
+        {
+          "id": "ounces",
+          "height": 52.5
+        }
+      ],
+      "primary": 48.390625,
+      "reset": 44
+    },
+    {
+      "width": 915,
+      "height": 412,
+      "overflow": false,
+      "inputs": [
+        {
+          "id": "entry",
+          "height": 52.5
+        },
+        {
+          "id": "exit",
+          "height": 52.5
+        },
+        {
+          "id": "lots",
+          "height": 52.5
+        },
+        {
+          "id": "rate",
+          "height": 52.5
+        },
+        {
+          "id": "stop",
+          "height": 52.5
+        },
+        {
+          "id": "ounces",
+          "height": 52.5
+        }
+      ],
+      "primary": 48.390625,
+      "reset": 44
+    },
+    {
+      "width": 1200,
+      "height": 900,
+      "overflow": false,
+      "inputs": [
+        {
+          "id": "entry",
+          "height": 52.5
+        },
+        {
+          "id": "exit",
+          "height": 52.5
+        },
+        {
+          "id": "lots",
+          "height": 52.5
+        },
+        {
+          "id": "rate",
+          "height": 52.5
+        },
+        {
+          "id": "stop",
+          "height": 52.5
+        },
+        {
+          "id": "ounces",
+          "height": 52.5
+        }
+      ],
+      "primary": 48.390625,
+      "reset": 44
+    }
+  ],
+  "errors": [],
+  "installability": {
+    "installabilityErrors": []
+  }
+}

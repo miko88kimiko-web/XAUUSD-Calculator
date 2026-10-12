@@ -4,6 +4,12 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="XAUUSDの損益と損切り時の想定損失を日本円で計算。外部API不要のゴールド専用計算ツール。">
 <title>GOLD / XAUUSD 損益計算</title>
+<meta name="theme-color" content="#253b35">
+<meta name="application-name" content="GOLD CALC">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<script src="./pwa.js" defer></script>
 <link rel="stylesheet" href="style.css"><script src="calculator.js" defer></script><script src="app.js" defer></script>
 </head>
 <body>
@@ -27,4 +33,5 @@
 <section class="result-column" aria-labelledby="result-heading"><div class="result-card" aria-live="polite" aria-atomic="true"><div class="section-heading"><h2 id="result-heading">計算結果</h2><span>02 / RESULT</span></div><div class="result-top"><span>日本円での損益</span><span id="result-status" class="badge">利益</span></div><div id="yen" class="yen positive">+22,500<span> 円</span></div><p id="usd" class="usd">+$150.00 USD</p><div class="result-details"><div><span>取引数量</span><strong id="quantity">10 oz</strong></div><div><span>売買方向を反映した価格差</span><strong id="delta">+15.00 USD</strong></div><div><span>適用レート</span><strong id="applied-rate">150 JPY / USD</strong></div></div><div class="risk"><div class="risk-label"><span class="risk-icon" aria-hidden="true">↘</span><div><h3>損切り時の想定損失</h3><p>指定した損切り価格で決済した場合</p></div></div><strong id="loss">15,000<span> 円</span></strong><p id="loss-usd">$100.00 USD</p></div></div>
 <div class="formula-card"><span class="eyebrow">HOW IT WORKS</span><h3>計算のしくみ</h3><p><b id="formula-direction">決済価格 − エントリー価格</b><br>× ロット数 × 1ロットの数量 × ドル円レート</p><p class="hint">SELLでは「エントリー価格 − 決済価格」で計算します。日本円は小数点以下を四捨五入して表示します。</p></div></section>
 </div><footer><span>GOLD / XAUUSD</span><p>手数料・スワップ・スリッページ等は含みません。為替レートは手動入力です。</p></footer>
+<div class="pwa-tools"><p id="pwa-status" class="hint" role="status">オフライン利用の準備中…</p><button id="install-app" class="install-app" type="button" hidden>ホーム画面に追加</button></div>
 </main></body></html>
