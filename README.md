@@ -1,5 +1,9 @@
 # XAUUSD Calculator
 
+公開URL: https://miko88kimiko-web.github.io/XAUUSD-Calculator/
+
+AndroidのChromeで開き、「ホーム画面に追加」からインストールできます。
+
 ゴールド専用の日本円損益計算ツール。HTML / CSS / JavaScriptのみで動作し、外部API・外部ライブラリ・ビルド・通信は不要です。
 
 ## 使い方
@@ -69,7 +73,7 @@ ZIPの中のHTMLを直接開くだけではPWAとしてインストールでき�
 
 GitHubのリポジトリ Settings → Pages → Build and deployment → Source: Deploy from a branch → Branch: main / (root) → Save。
 
-GitHub Freeでは公開リポジトリのPagesが利用できます。非公開リポジトリのPagesはGitHub Pro等の対応プランが必要です。既存リポジトリの公開範囲はこの変更では変えていません。Pagesを設定できない場合は、公開範囲か利用プランをユーザーが選択する必要があります。
+GitHub Freeでは公開リポジトリのPagesが利用できます。非公開リポジトリのPagesはGitHub Pro等の対応プランが必要です。このリポジトリはユーザーの確認のもとPublicへ変更され、main / (root)からのPages公開を完了しました。
 
 ルート・プロジェクトのサブパスのどちらにも対応するよう、manifest・アイコン・Service Workerは相対URLにしています。公開後、Pages設定に表示されるURLへアクセスして動作を確認してください。
 
